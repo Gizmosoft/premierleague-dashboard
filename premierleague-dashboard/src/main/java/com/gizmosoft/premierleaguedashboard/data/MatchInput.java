@@ -2,12 +2,22 @@ package com.gizmosoft.premierleaguedashboard.data;
 
 // Data from CSV
 public class MatchInput {
+
+    private String id;
     private String home_team;
     private String away_team;
     private String home_goals;
     private String away_goals;
     private String result;
     private String season;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getHome_team() {
         return home_team;

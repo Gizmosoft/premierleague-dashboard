@@ -14,6 +14,7 @@ public class MatchDataProcessor implements ItemProcessor<MatchInput, Match> {
     @Override
     public Match process(final MatchInput matchInput) throws Exception {
         Match match = new Match();
+        match.setId(Long.parseLong(matchInput.getId()));
         match.setHome_team(matchInput.getHome_team());
         match.setAway_team(matchInput.getAway_team());
         match.setHome_goals(matchInput.getHome_goals());
