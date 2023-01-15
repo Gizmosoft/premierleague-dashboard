@@ -4,10 +4,10 @@ package com.gizmosoft.premierleaguedashboard.data;
 public class MatchInput {
 
     private String id;
-    private String home_team;
-    private String away_team;
-    private String home_goals;
-    private String away_goals;
+    private String homeTeam;
+    private String awayTeam;
+    private String homeGoals;
+    private String awayGoals;
     private String result;
     private String season;
 
@@ -19,36 +19,36 @@ public class MatchInput {
         this.id = id;
     }
 
-    public String getHome_team() {
-        return home_team;
+    public String getHomeTeam() {
+        return homeTeam;
     }
 
-    public void setHome_team(String home_team) {
-        this.home_team = home_team;
+    public void setHomeTeam(String homeTeam) {
+        this.homeTeam = homeTeam;
     }
 
-    public String getAway_team() {
-        return away_team;
+    public String getAwayTeam() {
+        return awayTeam;
     }
 
-    public void setAway_team(String away_team) {
-        this.away_team = away_team;
+    public void setAwayTeam(String awayTeam) {
+        this.awayTeam = awayTeam;
     }
 
-    public String getHome_goals() {
-        return home_goals;
+    public String getHomeGoals() {
+        return homeGoals;
     }
 
-    public void setHome_goals(String home_goals) {
-        this.home_goals = home_goals;
+    public void setHomeGoals(String homeGoals) {
+        this.homeGoals = homeGoals;
     }
 
-    public String getAway_goals() {
-        return away_goals;
+    public String getAwayGoals() {
+        return awayGoals;
     }
 
-    public void setAway_goals(String away_goals) {
-        this.away_goals = away_goals;
+    public void setAwayGoals(String awayGoals) {
+        this.awayGoals = awayGoals;
     }
 
     public String getResult() {

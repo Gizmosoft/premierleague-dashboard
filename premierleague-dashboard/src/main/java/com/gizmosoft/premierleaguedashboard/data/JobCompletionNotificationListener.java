@@ -47,13 +47,13 @@ public class JobCompletionNotificationListener extends JobExecutionListenerSuppo
             Map<String, Team> teamData = new HashMap<>();
 
             // get unique team names and count of all matches played by that team from each row of the dataset
-            em.createQuery("select m.home_team, count(*) from Match m group by m.home_team", Object[].class)
+            em.createQuery("select m.homeTeam, count(*) from Match m group by m.homeTeam", Object[].class)
                     .getResultList()
                     .stream()
                     .map(e -> new Team(e[0].toString(), e[1].toString()))
                     .forEach(team -> teamData.put(team.getTeamName(), team));
 
-            em.createQuery("select m.away_team, count(*) from Match m group by m.away_team", Object[].class)
+            em.createQuery("select m.awayTeam, count(*) from Match m group by m.awayTeam", Object[].class)
                     .getResultList()
                     .stream()
                     .forEach(e -> {

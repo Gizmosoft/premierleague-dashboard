@@ -15,15 +15,15 @@ public class MatchDataProcessor implements ItemProcessor<MatchInput, Match> {
     public Match process(final MatchInput matchInput) throws Exception {
         Match match = new Match();
         match.setId(Long.parseLong(matchInput.getId()));
-        match.setHome_team(matchInput.getHome_team());
-        match.setAway_team(matchInput.getAway_team());
-        match.setHome_goals(matchInput.getHome_goals());
-        match.setAway_goals(matchInput.getAway_goals());
+        match.setHomeTeam(matchInput.getHomeTeam());
+        match.setAwayTeam(matchInput.getAwayTeam());
+        match.setHomeGoals(matchInput.getHomeGoals());
+        match.setAwayGoals(matchInput.getAwayGoals());
 
         if("H".equals(matchInput.getResult()))
-            match.setResult(matchInput.getHome_team());
+            match.setResult(matchInput.getHomeTeam());
         else if("A".equals(matchInput.getResult()))
-            match.setResult(matchInput.getAway_team());
+            match.setResult(matchInput.getAwayTeam());
         else
             match.setResult("Match Drawn");
 

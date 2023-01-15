@@ -1,9 +1,7 @@
 package com.gizmosoft.premierleaguedashboard.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Team {
@@ -13,6 +11,21 @@ public class Team {
     private String teamName;
     private String totalMatches;
     private String totalWins;
+
+    public Team() {
+    }
+
+    // through this we are telling JPA to ignore the below field from adding to the DB.
+    @Transient
+    private List<Match> matches;
+
+    public List<Match> getMatches() {
+        return matches;
+    }
+
+    public void setMatches(List<Match> matches) {
+        this.matches = matches;
+    }
 
     public long getId() {
         return id;
