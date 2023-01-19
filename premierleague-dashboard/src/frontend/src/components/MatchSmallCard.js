@@ -1,12 +1,11 @@
 import {React} from 'react';
 
-export const MatchSmallCard = () => {
+export const MatchSmallCard = ({match}) => {
+  if (!match) return null;
+
   return (
     <div className="MatchSmallCard">
-        <h5>Match small card</h5>
-        <h5>Match small card</h5>
-        <h5>Match small card</h5>
-        <h5>Match small card</h5>
+        <p>{match.homeTeam} vs {match.awayTeam}</p>
     </div>
   );
 }

@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  // StrictMode Renders everything twice in development region
   <React.StrictMode>
     <App />
   </React.StrictMode>
