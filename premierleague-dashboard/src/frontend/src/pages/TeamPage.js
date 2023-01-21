@@ -3,6 +3,8 @@ import {MatchDetailCard} from '../components/MatchDetailCard';
 import {MatchSmallCard} from '../components/MatchSmallCard'
 import { useParams } from 'react-router-dom';
 
+import './TeamPage.scss';
+
 export const TeamPage = () => {
 
   // useState({}) -> defines an initial state for the team
@@ -37,9 +39,16 @@ export const TeamPage = () => {
   }
   return (
     <div className="TeamPage">
-        <h1>{team.teamName}</h1>
-        <MatchDetailCard match={team.matches[0]}/>
+        <div className='team-name-section'><h1 className='team-name'>{team.teamName}</h1></div>
+        <div className='win-loss-section'>Wins / Losses</div>
+        <div className='match-detail-card'>
+          <h3>Last Match Details</h3>
+          <MatchDetailCard match={team.matches[0]}/>
+        </div>
         {team.matches.slice(1).map(match => <MatchSmallCard key={match.id} match={match} />)}
+        <div>
+          <a href='#'>More</a>
+        </div>
     </div>
   );
 }
