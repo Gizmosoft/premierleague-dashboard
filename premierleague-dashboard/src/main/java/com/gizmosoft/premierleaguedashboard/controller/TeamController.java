@@ -1,12 +1,12 @@
 package com.gizmosoft.premierleaguedashboard.controller;
 
+import com.gizmosoft.premierleaguedashboard.model.Match;
 import com.gizmosoft.premierleaguedashboard.model.Team;
 import com.gizmosoft.premierleaguedashboard.repository.MatchRepository;
 import com.gizmosoft.premierleaguedashboard.repository.TeamRepository;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @CrossOrigin
@@ -27,5 +27,10 @@ public class TeamController {
         team.setMatches(matchRepository.findLatestMatchesByTeam(teamName, 5));
 
         return team;
+    }
+
+    @GetMapping("/teams/{teamName}/matches")
+    public List<Match> getMatchForTeam(@PathVariable String teamName, @RequestParam String season){
+        return this.matchRepository.findByTeamAndSeason(teamName, season);
     }
 }
