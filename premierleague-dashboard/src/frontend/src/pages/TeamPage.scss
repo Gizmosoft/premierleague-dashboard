@@ -1,14 +1,14 @@
 .TeamPage {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 0.5fr 0.70fr;
     grid-column-gap: 10px;
-    grid-row-gap: 10px;
+    grid-row-gap: 0px;
 
     .team-name-section {
         grid-column: span 4;
         justify-self: start;
-        align-self: end;
+        align-self: center;
     }
 
     .team-name {
@@ -22,6 +22,7 @@
     .match-detail-card{
         grid-column: span 5;
         text-align: center;
+        display: block;
     }
 
         .last-match-head {

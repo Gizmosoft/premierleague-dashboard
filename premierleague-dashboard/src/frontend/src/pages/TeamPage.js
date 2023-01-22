@@ -40,23 +40,30 @@ export const TeamPage = () => {
   if(!team || !team.teamName){
     return <h1>Team Not Found!</h1>
   }
+
+  console.log(team.teamName)
+  console.log(team.totalMatches)
+  console.log(team.totalWins)
+  console.log(team.totalDraws)
   return (
     <div className="TeamPage">
         <div className='team-name-section'><h1 className='team-name'>{team.teamName}</h1></div>
-        <div className='win-loss-section'>Wins / Losses
+        <div className='win-loss-section'>Wins / Losses / Draws
           <PieChart
             data={[
-              { title: 'Wins', value: 10, color: '#5bcc5b' },
-              { title: 'Losses', value: 15, color: '#e16565' },
-              { title: 'Draws', value: 10, color: '#d1d137' },
+              { title: 'Wins', value: Number(team.totalWins), color: '#5bcc5b' },
+              { title: 'Losses', value: Number(team.totalMatches) - (Number(team.totalWins) + team.totalDraws), color: '#e16565' },
+              { title: 'Draws', value: Number(team.totalDraws), color: '#d1d137' },
             ]}
-          />;
+          />
         </div>
         <div className='match-detail-card'>
           <h3 className='last-match-head'>Last Match Details</h3>
           <MatchDetailCard teamName={team.teamName} match={team.matches[0]}/>
         </div>
+  
         {team.matches.slice(1).map(match => <MatchSmallCard teamName={team.teamName} key={match.id} match={match} />)}
+        
         <div className='more-link'>
           <a href='#'>More &gt;</a>
         </div>
