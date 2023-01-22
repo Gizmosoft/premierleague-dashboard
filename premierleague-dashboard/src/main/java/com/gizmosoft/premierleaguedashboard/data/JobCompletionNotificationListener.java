@@ -1,6 +1,5 @@
 package com.gizmosoft.premierleaguedashboard.data;
 
-import ch.qos.logback.core.net.SyslogOutputStream;
 import com.gizmosoft.premierleaguedashboard.model.Team;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,13 +7,11 @@ import org.springframework.batch.core.BatchStatus;
 import org.springframework.batch.core.JobExecution;
 import org.springframework.batch.core.listener.JobExecutionListenerSupport;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @Component
@@ -69,6 +66,24 @@ public class JobCompletionNotificationListener extends JobExecutionListenerSuppo
                         Team team = teamData.get(e[0].toString());
                         if(team != null)
                             team.setTotalWins(e[1].toString());
+                    });
+
+            em.createQuery("select m.homeTeam, count(m.result) from Match m where m.result='Match Drawn' group by m.homeTeam", Object[].class)
+                    .getResultList()
+                    .stream()
+                    .forEach(e -> {
+                        Team team = teamData.get(e[0].toString());
+                        if(team != null)
+                            team.setTotalDraws((long)e[1]);
+                    });
+
+            em.createQuery("select m.awayTeam, count(m.result) from Match m where m.result='Match Drawn' group by m.awayTeam", Object[].class)
+                    .getResultList()
+                    .stream()
+                    .forEach(e -> {
+                        Team team = teamData.get(e[0].toString());
+                        Long num = team.getTotalDraws() + (long)e[1];
+                        team.setTotalDraws(num);
                     });
 
             teamData.values().forEach(team -> em.persist(team));

@@ -3,6 +3,9 @@ import {MatchDetailCard} from '../components/MatchDetailCard';
 import {MatchSmallCard} from '../components/MatchSmallCard'
 import { useParams } from 'react-router-dom';
 
+// import pie chart module
+import { PieChart } from 'react-minimal-pie-chart';
+
 import './TeamPage.scss';
 
 export const TeamPage = () => {
@@ -40,14 +43,22 @@ export const TeamPage = () => {
   return (
     <div className="TeamPage">
         <div className='team-name-section'><h1 className='team-name'>{team.teamName}</h1></div>
-        <div className='win-loss-section'>Wins / Losses</div>
-        <div className='match-detail-card'>
-          <h3>Last Match Details</h3>
-          <MatchDetailCard match={team.matches[0]}/>
+        <div className='win-loss-section'>Wins / Losses
+          <PieChart
+            data={[
+              { title: 'Wins', value: 10, color: '#5bcc5b' },
+              { title: 'Losses', value: 15, color: '#e16565' },
+              { title: 'Draws', value: 10, color: '#d1d137' },
+            ]}
+          />;
         </div>
-        {team.matches.slice(1).map(match => <MatchSmallCard key={match.id} match={match} />)}
-        <div>
-          <a href='#'>More</a>
+        <div className='match-detail-card'>
+          <h3 className='last-match-head'>Last Match Details</h3>
+          <MatchDetailCard teamName={team.teamName} match={team.matches[0]}/>
+        </div>
+        {team.matches.slice(1).map(match => <MatchSmallCard teamName={team.teamName} key={match.id} match={match} />)}
+        <div className='more-link'>
+          <a href='#'>More &gt;</a>
         </div>
     </div>
   );

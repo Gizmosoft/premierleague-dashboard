@@ -12,6 +12,8 @@ public class Team {
     private String totalMatches;
     private String totalWins;
 
+    private Long totalDraws;
+
     public Team() {
     }
 
@@ -59,17 +61,32 @@ public class Team {
         this.totalWins = totalWins;
     }
 
+    public Long getTotalDraws() {
+        return totalDraws;
+    }
+
+    public void setTotalDraws(Long totalDraws) {
+        this.totalDraws = totalDraws;
+    }
+
     public Team(String teamName, String totalMatches) {
         this.teamName = teamName;
         this.totalMatches = totalMatches;
     }
 
+    // custom constructor for totalDraws
+    public Team(Long totalDraws) {
+        this.totalDraws = totalDraws;
+    }
+
     @Override
     public String toString() {
         return "Team{" +
-                "teamName='" + teamName + '\'' +
+                "id=" + id +
+                ", teamName='" + teamName + '\'' +
                 ", totalMatches='" + totalMatches + '\'' +
                 ", totalWins='" + totalWins + '\'' +
+                ", totalDraws='" + totalDraws + '\'' +
                 '}';
     }
 }
