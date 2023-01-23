@@ -28,11 +28,13 @@ export const MatchDetailCard = ({teamName, match}) => {
   
   return (
     <div className={isMatchWon ? 'MatchDetailCard won-card' : 'MatchDetailCard lost-card'}>
+      <div>
         <h3 className='last-game-score'><Link to={homeTeamRoute}>{match.homeTeam}</Link> <span className='goals-section'>{match.homeGoals}</span> : <span className='goals-section'>{match.awayGoals}</span> <Link to={awayTeamRoute}>{match.awayTeam}</Link></h3>
         <p className='result-note'>{match.result} won the match</p>
-        <div>
-          <p className='season-section'>Season: {match.season}</p>
-        </div>
+      </div>
+      <div>
+        <p className='season-section'>Season: {match.season}</p>
+      </div>
 
     </div>
   );

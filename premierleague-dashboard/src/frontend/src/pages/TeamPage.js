@@ -2,6 +2,7 @@ import {React, useEffect, useState} from 'react';
 import {MatchDetailCard} from '../components/MatchDetailCard';
 import {MatchSmallCard} from '../components/MatchSmallCard'
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 // import pie chart module
 import { PieChart } from 'react-minimal-pie-chart';
@@ -16,6 +17,10 @@ export const TeamPage = () => {
   // useParams gives us all the path params
   // we are using array destructuring to get the teamName from the path params
   const {teamName} = useParams();
+
+  // getting end season from .env file and formatting it as per need
+  const temp = parseInt(process.env.REACT_APP_DATA_END_SEASON) + 1;
+  const endSeason = process.env.REACT_APP_DATA_END_SEASON + "-" + temp;
 
 
   useEffect(
@@ -41,10 +46,6 @@ export const TeamPage = () => {
     return <h1>Team Not Found!</h1>
   }
 
-  console.log(team.teamName)
-  console.log(team.totalMatches)
-  console.log(team.totalWins)
-  console.log(team.totalDraws)
   return (
     <div className="TeamPage">
         <div className='team-name-section'><h1 className='team-name'>{team.teamName}</h1></div>
@@ -65,7 +66,7 @@ export const TeamPage = () => {
         {team.matches.slice(1).map(match => <MatchSmallCard teamName={team.teamName} key={match.id} match={match} />)}
         
         <div className='more-link'>
-          <a href='#'>More &gt;</a>
+          <Link to={`/teams/${teamName}/matches/${endSeason}`}>More &gt;</Link>
         </div>
     </div>
   );

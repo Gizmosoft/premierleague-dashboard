@@ -1,0 +1,19 @@
+.MatchPage {
+    display: grid;
+    grid-template-columns: 0.3fr 0.7fr;
+
+    .match-page-head {
+        grid-column: span 2;
+        text-align: center;
+        margin: 30px;
+    }
+
+    .season-match-history {
+        text-align: center;
+    }
+
+    .season-selector {
+        justify-self: center;
+        padding: 20px;
+    }
+}
