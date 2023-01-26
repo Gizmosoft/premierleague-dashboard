@@ -42,6 +42,12 @@ export const TeamPage = () => {
     }, [teamName]
   );
 
+  // Calculation of total win/loss/draw Percentages
+  const totalLosses = Number(team.totalMatches) - (Number(team.totalWins) + team.totalDraws);
+  const winPercentage = (Number(team.totalWins)/Number(team.totalMatches))*100;
+  const lossPercentage = (totalLosses/Number(team.totalMatches))*100;
+  const drawPercentage = (Number(team.totalDraws)/Number(team.totalMatches))*100;
+
   if(!team || !team.teamName){
     return <h1>Team Not Found!</h1>
   }
@@ -52,9 +58,9 @@ export const TeamPage = () => {
         <div className='win-loss-section'>Wins / Losses / Draws
           <PieChart
             data={[
-              { title: 'Wins', value: Number(team.totalWins), color: '#5bcc5b' },
-              { title: 'Losses', value: Number(team.totalMatches) - (Number(team.totalWins) + team.totalDraws), color: '#e16565' },
-              { title: 'Draws', value: Number(team.totalDraws), color: '#d1d137' },
+              { title: 'Wins: ' + winPercentage.toFixed(2) + '%', value: Number(team.totalWins), color: '#5bcc5b' },
+              { title: 'Losses: ' + lossPercentage.toFixed(2) + '%', value: totalLosses, color: '#e16565' },
+              { title: 'Draws: ' + drawPercentage.toFixed(2) + '%', value: Number(team.totalDraws), color: '#d1d137' },
             ]}
           />
         </div>
