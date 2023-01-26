@@ -25,7 +25,7 @@ export const TeamPage = () => {
 
   useEffect(
     () => {
-      const fetchMatches = async() => {
+      const fetchTeams = async() => {
         // get the response using fetch() which would return a promise (which is an async object)
         // we can use await here as this is an async function
         const response = await fetch(`http://localhost:8081/teams/${teamName}`);
@@ -36,7 +36,7 @@ export const TeamPage = () => {
         // set the data as Team data to be received by the UI
         setTeam(data);
       };
-      fetchMatches();
+      fetchTeams();
     // below empty array is called dependecy list which tells about how many times the useEffect needs to be called. Not defining this will cause an infinte loop of useEffects being called. Empty array signifies that call useEffect only once at page load.
     // keeping array value as a property of the match object signifies that the property needs to change after page load
     }, [teamName]

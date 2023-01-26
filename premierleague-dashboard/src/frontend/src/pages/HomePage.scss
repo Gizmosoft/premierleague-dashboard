@@ -1,0 +1,22 @@
+.HomePage {
+
+    .header-section {
+        font-size: xx-large;
+        text-align: center;
+        padding-bottom: 20px;
+        padding-top: 20px;
+    }
+
+    .sub-header-section {
+        font-size: larger;
+        text-align: center;
+        padding-bottom: 20px;
+    }
+    
+    .team-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+    }
+}

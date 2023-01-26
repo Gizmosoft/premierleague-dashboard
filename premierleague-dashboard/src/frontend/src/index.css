@@ -16,6 +16,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #282c34;
+  background-image: url('bpl_bg_2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: soft-light;
   color: white;
   max-width: 1300px;
   margin: 0 auto;
