@@ -28,7 +28,7 @@ export const TeamPage = () => {
       const fetchTeams = async() => {
         // get the response using fetch() which would return a promise (which is an async object)
         // we can use await here as this is an async function
-        const response = await fetch(`http://localhost:8081/teams/${teamName}`);
+        const response = await fetch(`${process.env.REACT_APP_DATA_API_ROOT_URL}/teams/${teamName}`);
 
         // get data from the above received response
         const data = await response.json();

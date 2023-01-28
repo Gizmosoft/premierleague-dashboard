@@ -12,7 +12,7 @@ export const HomePage = () => {
     () => {
       const fetchAllTeams = async() => {
         
-        const response = await fetch(`http://localhost:8081/teams`);
+        const response = await fetch(`${process.env.REACT_APP_DATA_API_ROOT_URL}/teams`);
 
         // get data from the above received response
         const data = await response.json();

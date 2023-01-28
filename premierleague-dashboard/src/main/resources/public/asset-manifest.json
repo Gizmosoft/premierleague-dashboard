@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b0939a03.css",
+    "main.js": "/static/js/main.ced6530f.js",
+    "static/js/787.cda612ba.chunk.js": "/static/js/787.cda612ba.chunk.js",
+    "static/media/bpl_bg_2.jpg": "/static/media/bpl_bg_2.bfe97d1dc2f3b1d5f81e.jpg",
+    "index.html": "/index.html",
+    "main.b0939a03.css.map": "/static/css/main.b0939a03.css.map",
+    "main.ced6530f.js.map": "/static/js/main.ced6530f.js.map",
+    "787.cda612ba.chunk.js.map": "/static/js/787.cda612ba.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b0939a03.css",
+    "static/js/main.ced6530f.js"
+  ]
+}
