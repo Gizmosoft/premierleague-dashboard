@@ -22,7 +22,7 @@ function App() {
             </>
           }>
           </Route>
-          <Route path='/teams' element={
+          <Route path='/' element={
             <>
               <HomePage />
             </>

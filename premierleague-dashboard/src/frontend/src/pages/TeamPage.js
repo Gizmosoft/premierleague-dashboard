@@ -74,6 +74,7 @@ export const TeamPage = () => {
         <div className='more-link'>
           <Link to={`/teams/${teamName}/matches/${endSeason}`}>More &gt;</Link>
         </div>
+        <Link to={`/`}>&lt;&lt; Go Back to Home</Link>
     </div>
   );
 }

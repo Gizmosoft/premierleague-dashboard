@@ -2,6 +2,7 @@ import {React, useEffect, useState} from 'react';
 import { useParams } from 'react-router-dom';
 import {MatchDetailCard} from '../components/MatchDetailCard';
 import { SeasonSelector } from '../components/SeasonSelector';
+import { Link } from 'react-router-dom';
 
 import './MatchPage.scss';
 
@@ -36,6 +37,8 @@ export const MatchPage = () => {
           <div className='season-selector'>
             <h3>Select Season:</h3>
             <SeasonSelector teamName={teamName} />
+            <Link to={`/teams/${teamName}`}>&lt;&lt; Go Back to Team Page</Link><br />
+            <Link to={`/`}>&lt;&lt; Go Back to Home</Link>
           </div>
           <div className='season-match-history'>
             {matches.map(match => <MatchDetailCard key={match.id} teamName={teamName} match={match} />)}

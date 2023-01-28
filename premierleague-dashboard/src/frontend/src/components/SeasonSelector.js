@@ -18,7 +18,7 @@ export const SeasonSelector = ({teamName}) => {
     return (
         <ul className='SeasonSelector'>
         {seasons.map(season => (
-            <li>
+            <li key={season}>
                 <Link to={`/teams/${teamName}/matches/${season}`}>{season}</Link>
             </li>
             )
