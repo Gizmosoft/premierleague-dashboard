@@ -8,7 +8,6 @@ A Spring Boot web application to display Barclays Premier League match data from
 > - ReactJS/JSX
 > - HTML/CSS
 > - Postman
-> - Initially, the redirection address would be [127.0.0.1:5500/index.html](127.0.0.1:5500/index.html). Change it to [127.0.0.1:5500](127.0.0.1:5500) on the web browser. You'll see the application running.
 
 ## Home Page
 - Calls the API endpoint '/teams/' which shows a list of all the teams that played the league within the above time frame.
