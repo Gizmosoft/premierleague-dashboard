@@ -7,6 +7,7 @@ A Spring Boot web application to display Barclays Premier League match data from
 > - Java Spring Boot 5
 > - ReactJS/JSX
 > - HTML/CSS
+> - AWS Beanstalk
 > - Postman
 
 ## Home Page
