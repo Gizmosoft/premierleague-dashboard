@@ -36,4 +36,4 @@ A Spring Boot web application to display Barclays Premier League match data from
 - The ReactJS project for the UI was built separately from the Java Spring Boot project.
 - In order to avoid hosting them separately, ReactJS project was built first and then the build was embedded to the Spring Boot project within resources/public so that it gets built along with the backend.
 - Then the Spring Boot project was built into a JAR file which was hosted on AWS using AWS Elastic Beanstalk.
-- The Live Project can be accessed from here: [Live on AWS](http://premierleaguedashboard-env.eba-rkmsps3g.us-east-1.elasticbeanstalk.com/) {thsi can be accessed only between 1:30 PM UTC & 9:30 PM UTC}
+- The Live Project can be accessed from here: [Live on AWS](http://premierleaguedashboard-env.eba-rkmsps3g.us-east-1.elasticbeanstalk.com/) {this can be accessed only between 1:30 PM UTC & 9:30 PM UTC}
