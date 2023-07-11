@@ -4,7 +4,7 @@ A Spring Boot web application to display Barclays Premier League match data from
 ### Technologies Used
 > ### Programming Languages & Other Tools
 >
-> - Java Spring Boot 5
+> - Java Spring Boot 2
 > - ReactJS/JSX
 > - HTML/CSS
 > - AWS Beanstalk
